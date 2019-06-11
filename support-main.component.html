@@ -1,6 +1,36 @@
 <p>
-  support-main works!
-</p>
-<p>
   welcome:{{user}}
 </p>
+
+<!-- 
+<div className="row">
+  <div className="col-md-10"> -->
+<div class="row">
+  <div class="col-md-12 ">
+    <!-- <button (click)="isClicked = !isClicked" [class.myClass]="isClicked" class="btnStyle"> Cisco Cat2k Switches
+      1&nbsp;<i class="fas fa-star"></i></button>
+    <button (click)="isClicked = !isClicked" [class.myClass]="isClicked" class="btnStyle"> Cisco Cat2k Switches
+      2&nbsp;<i class="fas fa-star"></i></button>
+    <button [style.background-color]="isClicked ? 'blue': 'white'" (click)="isClicked = !isClicked" class="btnStyle">
+      Cisco Cat2k Switches 3&nbsp;<i class="fas fa-star"></i></button>
+    <button [style.background-color]="isClicked1 ? 'blue': 'white'" (click)="isClicked1 = !isClicked1"
+      [class.myClass]="isClicked" class="btnStyle"> Cisco Cat2k Switches 3&nbsp;<i class="fas fa-star"></i></button> -->
+    <!-- <button (click)=mainProd($event) class="btn btnStyle"> Cisco Cat2k Switches 5&nbsp;<i
+        class="fas fa-star"></i></button> -->
+
+    <!-- //[ngStyle] = "mainProd(evt)" -->
+  </div>
+  <div class="col-md-12">
+    <button [ngStyle]="letStyles" id="1" (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 6&nbsp;<i class="fas fa-star"></i></button>
+    <button [ngStyle]="letStyles" id="2" ngDefaultControl [(ngModel)]="isClicked" (click)="mainProd($event)"
+      class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button>
+    <!-- <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button> -->
+
+    <!--  <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button> -->
+    <!-- <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 8&nbsp;<i class="fas fa-star"></i></button>
+    <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 9&nbsp;<i class="fas fa-star"></i></button> -->
+    <!-- <button (click)=mainProd($event) class="btn btnStyle"> Cisco Cat2k Switches 10&nbsp;<i
+        class="fas fa-star"></i></button> -->
+  </div>
+</div>
