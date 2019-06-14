@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-support-main',
@@ -10,72 +9,114 @@ import { NgForOf } from '@angular/common';
 export class SupportMainComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
   user: string = this.route.snapshot.paramMap.get('id');
-  // isBcColor: boolean = true;
-  letStyles: {
-    // "background-color": "green",
-  };
-  isClicked = false;
-  // letStyles = {
-  //   "background-color": "skyblue",
-  // }
+  counter: number = 0;
+  varTextContent;
+  varDesTarget: string = "";
+  varDesTargetLen: number = 0;
+  varDesTargetVal: string = "";
+  tech1: string = "";
+  // addCounter:number = 0;
   mainProd(evt) {
-    // alert()
-    // console.log("hii how are you")
-    // this.letStyles = {
-    //   "background-color": "green",
-
-    // }
     var buttons = document.getElementsByClassName("btnStyle");
-    // console.log(evt)
-    // buttons.evt.target
-    // *[NgFor]
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i] == evt.target) {
+        buttons[i].classList.add("activeclass");
+        this.varTextContent = evt.target.innerText;
+        // this.doChange(varTextContent);
+      } else {
+        buttons[i].classList.remove("activeclass");
+      }
+    }
+    // return varTextContent;
+  }
+  mainSubProd(evt) {
+    // console.log("this is sub product")
+
+    var buttons = document.getElementsByClassName("fas fa-star");
+    // if(evt.target != )
     for (var i = 0; i < buttons.length; i++) {
 
-      // if (!(buttons[i] == evt.target)) {
-      //   this.letStyles = {
-      //     "background-color": "white",
-
-      //     // $scope.myObj = {
-      //     //   "color" : "white",
-      //     //   "background-color" : "coral",
-      //     //   "font-size" : "60px",
-      //     //   "padding" : "50px"
-      //     // }
-      //   }
-      // }
       if (buttons[i] == evt.target) {
-        console.log(buttons[i].className)
+        if (buttons[i].className == "fas fa-star activeclassSub") {
+          buttons[i].classList.remove("activeclassSub");
+          this.counter = this.counter - 1;
+          // console.log(this.counter)
 
-        evt.target.id = true;
+        }
+        else {
+          buttons[i].classList.add("activeclassSub");
+          this.counter = this.counter + 1;
+          // console.log(this.counter)
+        }
+
+      }
+      // if (buttons[i].className == "fas fa-star activeclassSub") {
+      // buttons[i].classList.remove("activeclassSub");
+      // console.log("2" + buttons[i].className)
+      // }
+      // else
+      // {
+      //   buttons[i].classList.add("activeclassSub");
+
+      // }
+    }
+    // console.log(buttons)
+
+  }
+  doChange(evt) {
+    // console.log(evt.target.value)
+    this.varDesTarget = evt.target.value;
+    this.varDesTargetLen = this.varDesTarget.length;
+    // this.varDesTargetVal
+    // console.log("content" + this.varTextContent);
+    if (this.varTextContent != undefined) {
+      // alert()
+      // console.log(varDesTargetLen)
+      if (this.varDesTargetLen == 1) {
+        // console.log(this.varDesTargetVal)
+        this.varDesTargetVal = this.varTextContent + this.varDesTarget;
+        // console.log(this.varDesTargetVal)
+      }
+      else {
+        // console.log("2")
+        this.varDesTargetVal = this.varDesTarget;
+      }
+    }
+    // console.log(this.varDesTargetVal)
+  }
+  tech(evt) {
+    this.tech1 = evt.target.id;
+    // console.log(this.tech1)
+    // buttons[i].classList.add("activeclassSub");
+    var buttons = document.getElementsByClassName("btnDesc");
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i] == evt.target) {
         buttons[i].classList.add("activeclass");
-
-        // this.letStyles = {
-        //   "background-color": "skyblue",
-        // evt.target.sty
-        // $scope.myObj = {
-        //   "color" : "white",
-        //   "background-color" : "coral",
-        //   "font-size" : "60px",
-        //   "padding" : "50px"
-        // }
-        // }
-
-        // buttons[i]
-      }else{
-      buttons[i].classList.remove("activeclass");
-      // buttons[i]. = "white";
-      // console.log(buttons[i])
-      // var varWhiteColor = buttons[i].
-      // console.log("dsdsd"+evt.target.id)
-      // this.s
+        // this.varTextContent = xevt.target.innerText;
+        // this.doChange(varTextContent);
+      } else {
+        buttons[i].classList.remove("activeclass");
+      }
     }
   }
 
-    // var isClicked = false;
-    // return this.letStyles;
+  doSeverity(evt) {
+
+    var buttons = document.getElementsByClassName("btn btn-default btn-circle");
+    for (var i = 0; i < buttons.length; i++) {
+      if (buttons[i] == evt.target) {
+        buttons[i].classList.add("activeclass");
+        // this.varTextContent = evt.target.innerText;
+        // this.doChange(varTextContent);
+      } else {
+
+        buttons[i].classList.remove("activeclass");
+      }
+    }
+  }
+  doSubmit(evt) {
 
   }
   ngOnInit() {
   }
-
 }

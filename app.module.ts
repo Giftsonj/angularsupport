@@ -6,12 +6,18 @@ import { AppComponent } from './app.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { SupportMainComponent } from './support-main/support-main.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { Tech1Component } from './tech1/tech1.component';
+import { Tech2Component } from './tech2/tech2.component';
+import { Tech3Component } from './tech3/tech3.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponentComponent,
-    SupportMainComponent
+    SupportMainComponent,
+    Tech1Component,
+    Tech2Component,
+    Tech3Component
     
   ],
   imports: [

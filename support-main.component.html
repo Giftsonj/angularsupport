@@ -1,7 +1,9 @@
 <p>
   welcome:{{user}}
 </p>
-
+<p>
+  Fav: {{this.counter}}
+</p>
 <!-- 
 <div className="row">
   <div className="col-md-10"> -->
@@ -19,12 +21,25 @@
         class="fas fa-star"></i></button> -->
 
     <!-- //[ngStyle] = "mainProd(evt)" -->
+
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 1&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 2&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 3&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 4&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
   </div>
   <div class="col-md-12">
-    <button [ngStyle]="letStyles" id="1" (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
-      Switches 6&nbsp;<i class="fas fa-star"></i></button>
-    <button [ngStyle]="letStyles" id="2" ngDefaultControl [(ngModel)]="isClicked" (click)="mainProd($event)"
-      class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 6&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 7&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 8&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
+    <button (click)="mainProd($event)" class="btnStyle"> Cisco Cat2k
+      Switches 9&nbsp;<i (click)="mainSubProd($event)" class="fas fa-star"></i></button>
     <!-- <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button> -->
 
     <!--  <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 7&nbsp;<i class="fas fa-star"></i></button> -->
@@ -32,5 +47,46 @@
     <button (click)=mainProd($event) class="btnStyle"> Cisco Cat2k Switches 9&nbsp;<i class="fas fa-star"></i></button> -->
     <!-- <button (click)=mainProd($event) class="btn btnStyle"> Cisco Cat2k Switches 10&nbsp;<i
         class="fas fa-star"></i></button> -->
+  </div>
+  <!-- (keyup)="doChange($event)" -->
+  <div>
+    <label>Description</label>
+    <textarea rows="5" cols="120" (keyup)="doChange($event)" [value]="varDesTargetVal"></textarea>
+    <!-- <textarea rows="5" cols="120" onChange={this.textDesc} id={"valTextArea"} value={this.state.textAreaName} placeholder="Enter problem descripton here"></textarea> -->
+  </div>
+  <div class="col-md-12" [ngSwitch]="tech1">
+    <div>
+      <label>Technology</label>
+      <button (click)="tech($event)" id="1" class="btnDesc"> Cisco Cat2k
+        Switches 1&nbsp;</button>
+      <button (click)="tech($event)" id="2" class="btnDesc"> Cisco Cat2k
+        Switches 2&nbsp;</button>
+      <button (click)="tech($event)" id="3" class="btnDesc"> Cisco Cat2k
+        Switches 3&nbsp;</button>
+    </div>
+    <div>
+      <span *ngSwitchCase="1">
+        <app-tech1></app-tech1>
+      </span>
+      <span *ngSwitchCase="2">
+        <app-tech2></app-tech2>
+      </span>
+      <span *ngSwitchCase="3">
+        <app-tech3></app-tech3>
+      </span>
+
+    </div>
+  </div>
+  <div class="clsSeverity">
+    <label>Severity</label><br />
+    <button type="button" (click)="doSeverity($event)" class="btn btn-default btn-circle"> 1 </button>
+    <button type="button" (click)="doSeverity($event)" class="btn btn-default btn-circle"> 2 </button>
+    <button type="button" (click)="doSeverity($event)" class="btn btn-default btn-circle"> 3 </button>
+    <button type="button" (click)="doSeverity($event)" class="btn btn-default btn-circle"> 4 </button>
+  </div>
+  <!-- <app-login-component></app-login-component> -->
+  <div>
+    <button (click)="doSubmit($event)"> Submit</button>
+    <!-- <app-tech1></app-tech1> -->
   </div>
 </div>
